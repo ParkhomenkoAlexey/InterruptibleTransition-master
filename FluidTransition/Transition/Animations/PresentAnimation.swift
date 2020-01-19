@@ -15,7 +15,7 @@ class PresentAnimation: NSObject {
         let to = transitionContext.view(forKey: .to)!
         let finalFrame = transitionContext.finalFrame(for: transitionContext.viewController(forKey: .to)!)
         
-        to.frame = finalFrame.offsetBy(dx: 0, dy: finalFrame.height)
+        to.frame = finalFrame.offsetBy(dx: finalFrame.width, dy: 0)
         let animator = UIViewPropertyAnimator(duration: duration, curve: .easeOut) {
             to.frame = finalFrame
         }
